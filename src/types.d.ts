@@ -15,9 +15,10 @@ export type Street = {
   end: number;
   stName: string;
   time: number;
+  queue: Car[];
 };
 
 export type Car = {
   streetsNo: number;
-  path: string[];
+  paths: string[];
 };

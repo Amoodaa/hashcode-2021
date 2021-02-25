@@ -1,5 +1,5 @@
 import { readFileSync } from "fs";
-import { Input, Street } from "./types";
+import { Car, Input, Street } from "./types";
 
 const format = (txt: string): Input => {
   const [firstLine, ...restOfLines] = txt.split("\n");
@@ -22,17 +22,18 @@ const format = (txt: string): Input => {
       end: +endInter,
       stName: streetName,
       time: +streetTime,
+      queue: [],
     };
   }
   // parse cars
-  const cars = [];
+  const cars: Car[] = [];
   for (; i < restOfLines.length; i++) {
     const line = restOfLines[i];
     if (!line) break;
     const [numberOfStreetsCarWillTake, ...streetsToPass] = line.split(" ");
     cars.push({
       streetsNo: +numberOfStreetsCarWillTake,
-      path: streetsToPass,
+      paths: streetsToPass,
     });
   }
 
@@ -49,6 +50,5 @@ const format = (txt: string): Input => {
 
 export const read = (filename: string) => {
   const data = readFileSync(filename);
-  console.log(format(data.toString()));
   return format(data.toString());
 };
