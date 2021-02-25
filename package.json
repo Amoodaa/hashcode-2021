@@ -1,0 +1,26 @@
+{
+  "name": "hashcode-2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:a": "node -r ts-node/register src a",
+    "test:b": "node -r ts-node/register src b",
+    "test:c": "node -r ts-node/register src c",
+    "test:d": "node -r ts-node/register src d",
+    "test:e": "node -r ts-node/register src e",
+    "test:6": "node -r ts-node/register src f",
+    "test": "npm-run-all test:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.14.31",
+    "npm-run-all": "^4.1.5"
+  },
+  "devDependencies": {
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2"
+  }
+}
